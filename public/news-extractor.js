@@ -1,6 +1,6 @@
 $(document).ready(function() {
   fetch(
-    "http://newsapi.org/v2/top-headlines?country=in&apiKey=301f8a69a50b4f8c8bfbd6a2bfd6687c"
+    "https://newsapi.org/v2/top-headlines?country=in&apiKey=301f8a69a50b4f8c8bfbd6a2bfd6687c"
   )
     .then(res => res.json())
     .then(data => {
