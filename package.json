@@ -1,0 +1,15 @@
+{
+  "name": "indiafightscorona",
+  "version": "1.0.0",
+  "description": " Coronavirus tracker for India",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "heroku-postbuild": "npm install && npm run build"
+  },
+  "author": "Rahul Mohata",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

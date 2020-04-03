@@ -1,0 +1,196 @@
+#container {
+  animation: 1.3s 0.1s fadeIn ease-in-out;
+  width: 80%;
+  margin: 100px auto;
+  margin-top: 130px;
+}
+
+.nav-item {
+  margin: 0 5px;
+}
+
+.nav-item .nav-link {
+  font-size: 1.1rem;
+}
+
+.heading {
+  margin: 80px auto;
+  padding: 20px auto;
+  margin-top: 140px;
+}
+
+.data {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.row {
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.statewise-data {
+  width: 77%;
+  margin: 50px auto;
+  margin-bottom: 100px;
+}
+
+@media screen and (max-width: 500px) {
+  .statewise-data {
+    width: 88%;
+  }
+}
+
+footer {
+  position: relative;
+  bottom: 0px;
+}
+
+/*============================NEWS styles=================================*/
+
+.news-item {
+  opacity: 0;
+}
+
+.news-item:nth-child(1) {
+  opacity: 1;
+}
+.news-item:nth-child(2) {
+  opacity: 1;
+}
+.news-item:nth-child(3) {
+  opacity: 1;
+}
+
+.news-image {
+  display: flex;
+  align-items: center;
+}
+
+.news-metadata {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/*==================== helpline styles =====================*/
+
+.helpline-table {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 500px) {
+  .helpline-table {
+    width: 100%;
+  }
+}
+
+/*=============================== Faq styles =============================*/
+.faq-list {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.card {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.faq-list .card-header {
+  display: flex;
+  justify-content: space-between;
+}
+.faq-list .card-body {
+  display: none;
+  transition: 1s ease-in-out;
+}
+
+.fa {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .faq-list {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
