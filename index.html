@@ -56,7 +56,7 @@
         </ul>
       </div>
     </nav>
-    <main id="container">
+    <main id="container tracker-container">
       <div class="heading">
         <h2 class="text-center">CoVID-19 Tracker</h2>
         <p class="lead text-center">
@@ -105,22 +105,30 @@
           </div>
         </div>
       </div>
-    </main>
 
-    <div class="statewise-data">
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">State/UT</th>
-            <th class="text-center" scope="col">Confirmed</th>
-            <th class="text-center" scope="col">Active</th>
-            <th class="text-center" scope="col">Recovered</th>
-            <th class="text-center" scope="col">Deaths</th>
-          </tr>
-        </thead>
-        <tbody class="statewise-table"></tbody>
-      </table>
-    </div>
+      <div class="statewise-data">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">State/UT</th>
+              <th class="text-center confirmed-column" scope="col">
+                <span>Confirmed</span>
+              </th>
+              <th class="text-center active-column" scope="col">
+                <span>Active</span>
+              </th>
+              <th class="text-center recovered-column" scope="col">
+                <span>Recovered</span>
+              </th>
+              <th class="text-center deaths-column" scope="col">
+                <span>Deaths</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="statewise-table"></tbody>
+        </table>
+      </div>
+    </main>
 
     <footer>
       <p class="text-muted text-center"></p>

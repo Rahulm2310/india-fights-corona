@@ -35,11 +35,12 @@ $(document).ready(function() {
               <p class="mt-2 text-left ">
                 ${updatedContent}
               </p>
+              <a class="btn btn-outline-info" href="${item.url}">Read more</a>
+
               <div class="news-metadata">
               <small class="text-muted">${
                 item.author ? item.author : "Anonymous"
               }</small>
-              <a class="btn btn-outline-info" href="${item.url}">Read more</a>
               <small class="text-muted">${timeFromNow}</small>
               </div>
             </div>
@@ -60,8 +61,8 @@ $(document).ready(function() {
           var bottom_of_window = $(window).scrollTop() + $(window).height();
 
           /* If the object is completely visible in the window, fade it it */
-          if (bottom_of_window > bottom_of_object) {
-            $(this).animate({ opacity: "1" }, 1000);
+          if (bottom_of_window > bottom_of_object - 320) {
+            $(this).animate({ opacity: "1" }, 800);
           }
         });
       });

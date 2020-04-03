@@ -36,9 +36,34 @@
   margin-bottom: 100px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
   .statewise-data {
-    width: 88%;
+    width: 90%;
+  }
+
+  .confirmed-column span {
+    display: none;
+  }
+  .confirmed-column::after {
+    content: "C";
+  }
+  .active-column span {
+    display: none;
+  }
+  .active-column::after {
+    content: "A";
+  }
+  .recovered-column span {
+    display: none;
+  }
+  .recovered-column::after {
+    content: "R";
+  }
+  .deaths-column span {
+    display: none;
+  }
+  .deaths-column::after {
+    content: "D";
   }
 }
 

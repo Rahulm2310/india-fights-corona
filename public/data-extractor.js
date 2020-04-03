@@ -38,5 +38,6 @@ $(document).ready(function() {
 
       $(".statewise-table").html(tableRows.join(""));
     });
+
   $("footer p").text("Designed and Maintained by Rahul Mohata");
 });
