@@ -31,14 +31,14 @@
 }
 
 .statewise-data {
-  width: 77%;
+  width: 95%;
   margin: 50px auto;
   margin-bottom: 100px;
 }
 
 @media screen and (max-width: 550px) {
   .statewise-data {
-    width: 90%;
+    width: 100%;
   }
 
   .confirmed-column span {
