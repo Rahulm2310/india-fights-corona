@@ -18,8 +18,12 @@
       rel="stylesheet"
     />
     <link href="style.css" rel="stylesheet" />
-  </head>
-  <body>
+      <link rel="manifest" href="manifest.json">
+
+    <meta name="theme-color" content="#0099ff" />
+    </head>
+    <body>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <a class="navbar-brand" href="/"
         ><i class="fa fa-hand-peace-o" aria-hidden="true"></i> India fights
@@ -144,5 +148,23 @@
       text="text/javascript"
     ></script>
     <script src="data-extractor.js" type="text/javascript"></script>
-  </body>
+  <script>
+
+    // ServiceWorker Registration
+    if('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('sw.js').then(function(registration) {
+                // Registration was successful
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                
+            }, function(err) {
+                // registration failed :(
+                console.log('ServiceWorker registration failed: ', err);
+            });
+        });
+    }
+    
+
+</script>
+</body>
 </html>
