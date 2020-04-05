@@ -23,7 +23,7 @@
   </head>
 
 
-    <meta name="theme-color" content="#0099ff" />
+    <meta name="theme-color" content="#192B3D" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -154,7 +154,7 @@
       // ServiceWorker Registration
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", function() {
-          navigator.serviceWorker.register("sw.js",{scope:"/"}).then(
+          navigator.serviceWorker.register("sw.js").then(
             function(registration) {
               // Registration was successful
               console.log(

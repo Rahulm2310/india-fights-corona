@@ -1,6 +1,6 @@
 var CACHE_NAME = "version-1"; // bump this version when you make changes.
 // Put all your urls that you want to cache in this array
-var urlsToCache = ["/", "/news", "/helpline", "/faq"];
+var urlsToCache = ["../", "../news", "../helpline", "../faq"];
 
 // Install the service worker and open the cache and add files mentioned in array to cache
 self.addEventListener("install", function(event) {
@@ -30,7 +30,7 @@ self.addEventListener("fetch", function(event) {
 });
 
 self.addEventListener("activate", function(event) {
-  var cacheWhitelist = ["/", "/news", "/helpline", "/faq"]; // add cache names which you do not want to delete
+  var cacheWhitelist = ["../", "../news", "../helpline", "../faq"]; // add cache names which you do not want to delete
   cacheWhitelist.push(CACHE_NAME);
   event.waitUntil(
     caches
