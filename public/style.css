@@ -30,14 +30,21 @@
   justify-content: center;
 }
 
-.statewise-data {
+.data .card .card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.statewise-data,
+.datewise-data {
   width: 95%;
   margin: 50px auto;
   margin-bottom: 100px;
 }
 
 @media screen and (max-width: 550px) {
-  .statewise-data {
+  .statewise-data .datewise-data {
     width: 100%;
   }
 

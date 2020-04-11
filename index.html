@@ -79,7 +79,7 @@
           >
             <div class="card-header text-center">Confirmed</div>
             <div class="card-body">
-              <h2 class="card-title text-center confirmed"></h2>
+              <h2 class="card-title text-center confirmed"></h2><h4 class="text-muted confirmed-today"></h4>
             </div>
           </div>
           <div
@@ -97,7 +97,7 @@
           >
             <div class="card-header text-center">Recovered</div>
             <div class="card-body">
-              <h2 class="card-title text-center recovered"></h2>
+              <h2 class="card-title text-center recovered"></h2><h4 class="text-muted recovered-today"></h4>
             </div>
           </div>
           <div
@@ -106,9 +106,14 @@
           >
             <div class="card-header text-center">Deaths</div>
             <div class="card-body">
-              <h2 class="card-title text-center deaths"></h2>
+              <h2 class="card-title text-center deaths"></h2><h4 class="text-muted deaths-today"></h4>
             </div>
           </div>
+          <div class="card text-white bg-warning mb-3 col-lg-3 col-md-6 col-sm-6 col-xs-12" style="max-width: 15rem; margin:0px 10px;">
+            <div class="card-header text-center">Mortality rate</div>
+            <div class="card-body">
+              <h2 class="card-title text-center mortality-rate"></h2>
+            </div>
         </div>
       </div>
 
@@ -134,6 +139,30 @@
           <tbody class="statewise-table"></tbody>
         </table>
       </div>
+
+      <div class="datewise-data">
+        <h4 class="text-muted mb-3 text-center">Details of last one week</h4>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th class="text-center confirmed-column" scope="col">
+                <span>Confirmed</span>
+              </th>
+              <th class="text-center active-column" scope="col">
+                <span>Active</span>
+              </th>
+              <th class="text-center recovered-column" scope="col">
+                <span>Recovered</span>
+              </th>
+              <th class="text-center deaths-column" scope="col">
+                <span>Deaths</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="datewise-table"></tbody>
+        </table>
+      </div>
     </main>
 
     <footer>
@@ -154,7 +183,7 @@
       // ServiceWorker Registration
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", function() {
-          navigator.serviceWorker.register("sw.js").then(
+          navigator.serviceWorker.register("sw.js",{scope:"../"}).then(
             function(registration) {
               // Registration was successful
               console.log(
