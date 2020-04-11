@@ -44,7 +44,8 @@
 }
 
 @media screen and (max-width: 550px) {
-  .statewise-data .datewise-data {
+  .statewise-data,
+  .datewise-data {
     width: 100%;
   }
 
