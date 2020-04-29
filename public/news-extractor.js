@@ -1,11 +1,11 @@
-$(document).ready(function() {
+$(document).ready(function () {
   fetch(
     "https://newsapi.org/v2/top-headlines?country=in&apiKey=301f8a69a50b4f8c8bfbd6a2bfd6687c"
   )
-    .then(res => res.json())
-    .then(data => {
+    .then((res) => res.json())
+    .then((data) => {
       let newsData = data.articles;
-      let newsItems = newsData.map(item => {
+      let newsItems = newsData.map((item) => {
         let timeFromNow = moment(
           item.publishedAt,
           "YYYY-MM-DD HH:mm:ss"
@@ -54,9 +54,9 @@ $(document).ready(function() {
       $(".news-list").html(newsItems);
       $("footer p").text("Designed and Maintained by Rahul Mohata");
 
-      $(window).scroll(function() {
+      $(window).scroll(function () {
         /* Check the location of each desired element */
-        $(".news-item").each(function(i) {
+        $(".news-item").each(function (i) {
           var bottom_of_object = $(this).position().top + $(this).outerHeight();
           var bottom_of_window = $(window).scrollTop() + $(window).height();
 

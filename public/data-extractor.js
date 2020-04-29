@@ -9,6 +9,8 @@ $(document).ready(function () {
   let mortalityRate = 0;
   let updatedTime = "";
   let stateWiseData = [];
+  let districtWiseData = [];
+
   fetch("https://api.covid19india.org/data.json")
     .then((res) => res.json())
     .then((data) => {
@@ -46,7 +48,9 @@ $(document).ready(function () {
       stateWiseData.sort((a, b) => b.confirmed - a.confirmed);
 
       stateTableRows = stateWiseData.map(
-        (item) => `<tr class="table-secondary">
+        (
+          item
+        ) => `<tr class="table-secondary" data-toggle="modal" data-target="#exampleModalCenter">
         <th scope="row">${item.state}</th>
         <td class="text-center">${item.confirmed}</td>
         <td class="text-center">${item.active}</td>
@@ -71,6 +75,76 @@ $(document).ready(function () {
 
       $(".datewise-table").html(dateTableRows.join(""));
     });
+
+  fetch("https://api.covid19india.org/state_district_wise.json")
+    .then((res) => res.json())
+    .then((data) => {
+      districtWiseData = data;
+    });
+
+  $(".statewise-table").on("click", "tr", function () {
+    let stateName = $(this).children("th").text();
+    $(".modal-title").text(stateName);
+
+    if (districtWiseData[stateName] == null) {
+      $(".districtwise-table").html(
+        `<tr class="table-secondary">
+        <th scope="row">-</th>
+        <td class="text-center">-</td>
+        <td class="text-center">-</td>
+        <td class="text-center">-</td>
+        <td class="text-center">-</td></tr>`
+      );
+      return;
+    }
+
+    let districtwisedata = districtWiseData[stateName].districtData;
+
+    var districtTableRows = Object.keys(districtwisedata).map(function (key) {
+      return `<tr class="table-secondary">
+      <th scope="row">${key}</th>
+      <td class="text-center">${districtwisedata[key].confirmed}</td>
+      <td class="text-center">${districtwisedata[key].active}</td>
+      <td class="text-center">${districtwisedata[key].recovered}</td>
+      <td class="text-center">${districtwisedata[key].deceased}</td>
+    </tr>`;
+    });
+
+    $(".districtwise-table").html(districtTableRows.join(""));
+
+    let stateData = stateWiseData.filter((item) => item.state === stateName);
+    console.log(stateData);
+
+    $(".state-confirmed").text(stateData[0].confirmed);
+    if (stateData[0].deltaconfirmed !== "0") {
+      $(".state-confirmed-today").text(`(+${stateData[0].deltaconfirmed})`);
+    } else {
+      $(".state-confirmed-today").text("");
+    }
+    $(".state-active").text(stateData[0].active);
+    $(".state-recovered").text(stateData[0].recovered);
+
+    if (stateData[0].deltarecovered !== "0") {
+      $(".state-recovered-today").text(`(+${stateData[0].deltarecovered})`);
+    } else {
+      $(".state-recovered-today").text("");
+    }
+    $(".state-deaths").text(stateData[0].deaths);
+
+    if (stateData[0].deltadeaths !== "0") {
+      $(".state-deaths-today").text(`(+${stateData[0].deltadeaths})`);
+    } else {
+      $(".state-deaths-today").text("");
+    }
+
+    let lastUpdatedTime = stateData[0].lastupdatedtime;
+    let updatedFromNow = moment(
+      lastUpdatedTime,
+      "DD-MM-YYYY HH:mm:ss"
+    ).fromNow();
+
+    $(".state-updated-time").text(`( Last updated : ${updatedFromNow} )`);
+  });
 
   $("footer p").text("Designed and Maintained by Rahul Mohata");
 });

@@ -36,11 +36,44 @@
   align-items: center;
 }
 
+.statewise-table tr {
+  cursor: pointer;
+}
+
 .statewise-data,
 .datewise-data {
   width: 95%;
   margin: 50px auto;
   margin-bottom: 100px;
+}
+
+.modal-content {
+  max-height: 90vh;
+}
+
+.modal-body {
+  overflow: auto;
+}
+
+.modal-header {
+  align-items: baseline;
+}
+
+.modal-footer {
+  display: inline-block;
+}
+
+.modal-footer .row {
+  flex-wrap: nowrap;
+}
+
+.modal-footer .row .card-body {
+  padding: 0px;
+  align-items: unset;
+}
+
+.modal-footer .row .card-header {
+  font-size: 10px;
 }
 
 @media screen and (max-width: 550px) {

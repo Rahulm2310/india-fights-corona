@@ -118,6 +118,9 @@
       </div>
 
       <div class="statewise-data">
+        <h4 class="text-muted mb-3 text-center">State wise list</h4>
+        <p class="text-muted text-center">( Click on a state for district wise details )</p>
+
         <table class="table table-hover">
           <thead>
             <tr>
@@ -138,6 +141,86 @@
           </thead>
           <tbody class="statewise-table"></tbody>
         </table>
+      </div>
+
+    
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content bg-dark">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+              <p class="text-muted text-right state-updated-time"></p>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">District</th>
+                    <th class="text-center confirmed-column" scope="col">
+                      <span>Confirmed</span>
+                    </th>
+                    <th class="text-center active-column" scope="col">
+                      <span>Active</span>
+                    </th>
+                    <th class="text-center recovered-column" scope="col">
+                      <span>Recovered</span>
+                    </th>
+                    <th class="text-center deaths-column" scope="col">
+                      <span>Deaths</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="districtwise-table"></tbody>
+              </table>
+            </div>
+
+            <div class="modal-footer">
+              <div class="row">
+                <div
+                  class="card text-white bg-danger col-lg-3"
+                  style="max-width: 7rem;"
+                >
+                  <p class="text-center">Cnfmd</p>
+                  <div class="card-body">
+                    <p class="card-title text-center state-confirmed"></p><p class="text-muted state-confirmed-today"></p>
+                  </div>
+                </div>
+                <div
+                  class="card text-white bg-primary col-lg-3"
+                  style="max-width: 7rem; "
+                >
+                  <p class="text-center">Actv</p>
+                  <div class="card-body">
+                    <p class="card-title text-center state-active"></p>
+                  </div>
+                </div>
+                <div
+                  class="card text-white bg-success col-lg-3"
+                  style="max-width: 7rem;"
+                >
+                  <p class=" text-center">Rcvrd</p>
+                  <div class="card-body">
+                    <p class="card-title text-center state-recovered"></p><p class="text-muted state-recovered-today"></p>
+                  </div>
+                </div>
+                <div
+                  class="card text-white bg-secondary col-lg-3 "
+                  style="max-width: 7rem; "
+                >
+                  <p class="text-center">Dths</p>
+                  <div class="card-body">
+                    <p class="card-title text-center state-deaths"></p><p class="text-muted state-deaths-today"></p>
+                  </div>
+                </div>
+                </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="datewise-data">
