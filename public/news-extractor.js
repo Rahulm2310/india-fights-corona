@@ -15,7 +15,7 @@ $(document).ready(function () {
           : "";
         return `
         <div
-          class="news-item bg-dark flex-column align-items-start mb-4 p-4"
+          class="news-item bg-light flex-column align-items-start mb-4 p-4"
         >
           <div class="row">
             <div class="news-image col-lg-4 col-md-4 col-xs-12 ">

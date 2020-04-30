@@ -11,6 +11,7 @@
     />
     <link
       href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/superhero/bootstrap.min.css"
+      id='bootswatch-link'
       rel="stylesheet"
     />
     <link
@@ -58,6 +59,17 @@
           </li>
           <li class="nav-item text-center">
             <a class="nav-link" href="/faq">FAQ</a>
+          </li>
+          <li class="nav-item text-center dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Theme</a>
+            <div class="dropdown-menu" >
+              <a class="dropdown-item  text-center theme-default" href="#">Default</a>
+              <a class="dropdown-item  text-center theme-light" href="#">Light</a>
+              <a class="dropdown-item  text-center theme-gunmetal" href="#">Gunmetal</a>
+              <a class="dropdown-item  text-center theme-dark" href="#">Dark</a>
+              <!-- <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div> -->
           </li>
         </ul>
       </div>
@@ -148,7 +160,7 @@
       <!-- Modal -->
       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content bg-dark">
+          <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLongTitle"></h5>
               <p class="text-muted text-right state-updated-time"></p>
@@ -248,6 +260,8 @@
       </div>
     </main>
 
+
+
     <footer>
       <p class="text-muted text-center"></p>
     </footer>
@@ -262,6 +276,7 @@
       text="text/javascript"
     ></script>
     <script src="data-extractor.js" type="text/javascript"></script>
+    <script src="functioning.js" type="text/javascript"></script>
     <script>
       // ServiceWorker Registration
       if ("serviceWorker" in navigator) {

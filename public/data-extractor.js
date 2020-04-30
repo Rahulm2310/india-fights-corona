@@ -143,7 +143,7 @@ $(document).ready(function () {
       "DD-MM-YYYY HH:mm:ss"
     ).fromNow();
 
-    $(".state-updated-time").text(`( Last updated : ${updatedFromNow} )`);
+    $(".state-updated-time").text(`( Last updated ${updatedFromNow} )`);
   });
 
   $("footer p").text("Designed and Maintained by Rahul Mohata");
