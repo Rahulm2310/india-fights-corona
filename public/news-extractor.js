@@ -35,7 +35,7 @@ $(document).ready(function () {
               <p class="mt-2 text-left ">
                 ${updatedContent}
               </p>
-              <a class="btn btn-outline-info" href="${item.url}">Read more</a>
+              <a class="btn btn-info" href="${item.url}">Read more</a>
 
               <div class="news-metadata">
               <small class="text-muted">${
