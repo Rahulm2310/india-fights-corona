@@ -45,4 +45,6 @@ $(document).ready(function () {
     });
     localStorage.setItem("theme", theme);
   });
+
+  $("footer p").text("Designed and Maintained by Rahul Mohata");
 });

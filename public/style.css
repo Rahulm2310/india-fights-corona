@@ -17,7 +17,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 #container {
-  animation: 1.3s 0.1s fadeIn ease-in-out;
+  /* animation: 1.3s 0.1s fadeIn ease-in-out; */
   width: 80%;
   margin: 100px auto;
   margin-top: 130px;
@@ -67,6 +67,7 @@ html::-webkit-scrollbar-thumb {
   margin: 80px auto;
   padding: 20px auto;
   margin-top: 140px;
+  animation: 1s fadeIn ease-in-out;
 }
 
 .data {
@@ -78,6 +79,10 @@ html::-webkit-scrollbar-thumb {
   margin: 0 auto;
   text-align: center;
   justify-content: center;
+}
+
+.data-numbers {
+  animation: 1s fadeIn ease-in-out;
 }
 
 .data .card .card-body {
@@ -102,9 +107,17 @@ html::-webkit-scrollbar-thumb {
   margin-bottom: 100px;
 }
 
+.statewise-data {
+  animation: 1s fadeIn ease-in-out;
+}
+
+.datewise-data {
+  animation: 1s fadeIn ease-in-out;
+}
+
 .modal-content {
   max-height: 90vh;
-  width: fit-content;
+  /* width: fit-content; */
 }
 
 .modal-body {
@@ -151,6 +164,10 @@ html::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 550px) {
+  .home-container {
+    width: 95% !important;
+  }
+
   .statewise-data,
   .datewise-data {
     width: 100%;
@@ -199,12 +216,15 @@ footer {
 
 .news-item:nth-child(1) {
   opacity: 1;
+  animation: 1s fadeIn ease-in-out;
 }
 .news-item:nth-child(2) {
   opacity: 1;
+  animation: 1s fadeIn ease-in-out;
 }
 .news-item:nth-child(3) {
   opacity: 1;
+  animation: 1s fadeIn ease-in-out;
 }
 
 .news-image {
@@ -224,6 +244,7 @@ footer {
 .helpline-table {
   width: 80%;
   margin: 0 auto;
+  animation: 1s fadeIn ease-in-out;
 }
 
 @media screen and (max-width: 500px) {
@@ -236,6 +257,10 @@ footer {
 .faq-list {
   width: 80%;
   margin: 0 auto;
+}
+
+.faq-list .card {
+  animation: 1.3s fadeIn ease-in-out;
 }
 
 .card {
@@ -266,20 +291,24 @@ footer {
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
+    transform: translateY(20%);
   }
 
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
+    transform: translateY(20%);
   }
 
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 

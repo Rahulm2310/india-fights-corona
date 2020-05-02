@@ -52,7 +52,6 @@ $(document).ready(function () {
 
       newsItems = newsItems.join("");
       $(".news-list").html(newsItems);
-      $("footer p").text("Designed and Maintained by Rahul Mohata");
 
       $(window).scroll(function () {
         /* Check the location of each desired element */

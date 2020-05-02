@@ -95,6 +95,17 @@ $(document).ready(function () {
         <td class="text-center">-</td>
         <td class="text-center">-</td></tr>`
       );
+      $(".state-confirmed").text("0");
+      $(".state-confirmed-today").text("");
+
+      $(".state-active").text("0");
+
+      $(".state-recovered").text("0");
+      $(".state-recovered-today").text("");
+
+      $(".state-deaths").text("0");
+      $(".state-deaths-today").text("");
+
       return;
     }
 
@@ -145,6 +156,4 @@ $(document).ready(function () {
 
     $(".state-updated-time").text(`( Last updated ${updatedFromNow} )`);
   });
-
-  $("footer p").text("Designed and Maintained by Rahul Mohata");
 });
