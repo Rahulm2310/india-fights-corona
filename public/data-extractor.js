@@ -87,6 +87,8 @@ $(document).ready(function () {
     $(".modal-title").text(stateName);
 
     if (districtWiseData[stateName] == null) {
+      $(".state-updated-time").text("");
+
       $(".districtwise-table").html(
         `<tr class="table-secondary">
         <th scope="row">-</th>
