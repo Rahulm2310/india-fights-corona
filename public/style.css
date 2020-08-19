@@ -92,9 +92,9 @@ html::-webkit-scrollbar-thumb {
   align-items: center;
 }
 
-.text-muted {
+/* .text-muted {
   color: rgba(255, 255, 255, 0.623) !important;
-}
+} */
 
 .statewise-table tr {
   cursor: pointer;
@@ -197,6 +197,35 @@ html::-webkit-scrollbar-thumb {
   .deaths-column::after {
     content: "D";
   }
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0px;
+}
+
+.chart-control-btns {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  /* margin: 0 auto; */
+}
+
+.btn-container .dropdown {
+  list-style: none;
+}
+
+.dropdown-container {
+  padding: 7px 10px;
+  border: 2px solid #1e2b37;
+  border-radius: 5px;
+}
+
+.dropdown-container .dropdown-item {
+  /* background-color: darkblue !important; */
+  padding: 7px 10px;
 }
 
 footer {

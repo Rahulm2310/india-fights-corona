@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#192B3D" />
     <title>India fights Corona</title>
     <link
       rel="icon"
@@ -10,7 +11,7 @@
       type="image/x-icon"
     />
     <link
-      href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/superhero/bootstrap.min.css"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/flatly/bootstrap.min.css"
       id='bootswatch-link'
       rel="stylesheet"
     />
@@ -18,13 +19,10 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet" />
     <link rel="manifest" crossorigin="use-credentials" href="manifest.json" />
-    <link rel="apple-touch-icon" href="pwaicon512.png">
-  </head>
-
-
-    <meta name="theme-color" content="#192B3D" />
+    <link rel="apple-touch-icon" href="pwaicon512.png"/>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -75,7 +73,7 @@
       </div>
     </nav>
     <main id="container" class="home-container">
-      <div class="heading">
+      <div class="heading" data-aos="fade-up" data-aos-duration="1000">
         <h2 class="text-center">CoVID-19 Tracker</h2>
         <p class="lead text-center">
           Track the current situation of novel coronavirus in the country
@@ -88,6 +86,7 @@
           <div
             class="card text-white bg-danger mb-3 col-lg-3 col-md-6 col-sm-6 col-xs-12"
             style="max-width: 15rem;margin:0px 10px"
+            data-aos="fade-up" data-aos-duration="1000"
           >
             <div class="card-header text-center">Confirmed</div>
             <div class="card-body">
@@ -97,6 +96,7 @@
           <div
             class="card text-white bg-primary mb-3 col-lg-3 col-md-6 col-sm-6 col-xs-12"
             style="max-width: 15rem; margin:0px 10px "
+            data-aos="fade-up" data-aos-duration="1000"
           >
             <div class="card-header text-center">Active</div>
             <div class="card-body">
@@ -106,6 +106,7 @@
           <div
             class="card text-white bg-success mb-3 col-lg-3 col-md-6 col-sm-6 col-xs-12"
             style="max-width: 15rem; margin:0px 10px"
+            data-aos="fade-up" data-aos-duration="1000"
           >
             <div class="card-header text-center">Recovered</div>
             <div class="card-body">
@@ -115,6 +116,7 @@
           <div
             class="card text-white bg-secondary mb-3 col-lg-3 col-md-6 col-sm-6 col-xs-12"
             style="max-width: 15rem; margin:0px 10px"
+            data-aos="fade-up" data-aos-duration="1000"
           >
             <div class="card-header text-center">Deaths</div>
             <div class="card-body">
@@ -124,13 +126,14 @@
           <div
             class="card text-white bg-info mb-3 col-lg-3 col-md-6 col-sm-6 col-xs-12"
             style="max-width: 15rem; margin:0px 10px"
+            data-aos="fade-up" data-aos-duration="1000"
           >
             <div class="card-header text-center">Tested</div>
             <div class="card-body">
               <h2 class="card-title text-center tested"></h2><h4 class="text-muted tested-today"></h4>
             </div>
           </div>
-          <div class="card text-white bg-warning mb-3 col-lg-3 col-md-6 col-sm-6 col-xs-12" style="max-width: 15rem; margin:0px 10px;">
+          <div class="card text-white bg-warning mb-3 col-lg-3 col-md-6 col-sm-6 col-xs-12" style="max-width: 15rem; margin:0px 10px;" data-aos="fade-up" data-aos-duration="1000">
             <div class="card-header text-center">Mortality rate</div>
             <div class="card-body">
               <h2 class="card-title text-center mortality-rate"></h2>
@@ -139,11 +142,11 @@
       </div>
 
       <div class="statewise-data">
-        <h4 class="text-muted mb-3 text-center">State wise list</h4>
-        <p class="text-muted text-center">( Click on a state for district wise details )</p>
+        <h4 class="text-muted mb-3 text-center" data-aos="fade-up" data-aos-duration="1000">State wise list</h4>
+        <p class="text-muted text-center" data-aos="fade-up" data-aos-duration="1000">( Click on a state for district wise details )</p>
 
         <table class="table table-hover">
-          <thead>
+          <thead data-aos="fade-up" data-aos-duration="1000">
             <tr>
               <th scope="col">State/UT</th>
               <th class="text-center confirmed-column" scope="col">
@@ -160,7 +163,7 @@
               </th>
             </tr>
           </thead>
-          <tbody class="statewise-table"></tbody>
+          <tbody class="statewise-table" data-aos="fade-up" data-aos-duration="1000"></tbody>
         </table>
       </div>
 
@@ -245,14 +248,42 @@
       </div>
 
       <div class="charts-container">
-        <h4 class="text-muted mb-3 text-center">Spread Trends</h4>
-        <canvas id="myChart"></canvas>
+        <h4 class="text-muted mb-3 text-center" data-aos="fade-up" data-aos-duration="1000">Spread Trends</h4>
+        <p class="text-muted text-center" data-aos="fade-up" data-aos-duration="1000">( Click on a box to toggle it )</p>
+        <canvas id="myChart" data-aos="fade-up" data-aos-duration="1000"></canvas>
+          <div class="btn-container" >
+            <li class="nav-item dropdown" data-aos="fade-up" data-aos-duration="1000">
+              <!-- <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Chart type</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item line-chart" href="#">Line</a>
+                <a class="dropdown-item area-chart" href="#">Area</a>
+                <a class="dropdown-item bar-chart" href="#">Bar</a>
+                <a class="dropdown-item pie-chart" href="#">Pie</a>
+                <a class="dropdown-item radar-chart" href="#">Radar</a> -->
+                <!-- <div class="dropdown-divider"></div> -->
+              <!-- </div> -->
+              <select onchange="selectChart(this.options[this.selectedIndex].value)" name="chart-type" class="dropdown-container"><option value="line" class="dropdown-item">Line</option><option value="area" class="dropdown-item">Area</option><option value="bar" class="dropdown-item">Bar</option><option value="radar" class="dropdown-item">Radar</option></select>
+            </li> 
+        <div class="btn-group btn-group-toggle chart-control-btns" data-toggle="buttons" data-aos="fade-up" data-aos-duration="1000">
+          
+          <label class="btn btn-primary">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked="" disabled>Beginning
+          </label>
+          <label class="btn btn-primary">
+            <input type="radio" name="options" id="option2" autocomplete="off">3 months
+          </label>
+          <label class="btn btn-primary active">
+            <input type="radio" name="options" id="option3" autocomplete="off">1 month
+          </label>
+        </div>
+        </div>
+
       </div>
 
-      <div class="datewise-data">
-        <h4 class="text-muted mb-3 text-center">Details of last one week</h4>
+      <div class="datewise-data" data-aos="fade-up" data-aos-duration="1000">
+        <h4 class="text-muted mb-3 text-center" data-aos="fade-up" data-aos-duration="1000">Details of last one week</h4>
         <table class="table table-hover">
-          <thead>
+          <thead data-aos="fade-up" data-aos-duration="1000">
             <tr>
               <th scope="col">Date</th>
               <th class="text-center confirmed-column" scope="col">
@@ -269,7 +300,7 @@
               </th>
             </tr>
           </thead>
-          <tbody class="datewise-table"></tbody>
+          <tbody class="datewise-table" data-aos="fade-up" data-aos-duration="1000"></tbody>
         </table>
       </div>
     </main>
@@ -277,22 +308,42 @@
 
 
     <footer>
-      <p class="text-muted text-center"></p>
+      <p class="text-muted text-center" ></p>
     </footer>
+    <!-- JQUERY -->
     <script
       src="https://code.jquery.com/jquery-3.4.1.js"
       integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
       crossorigin="anonymous"
     ></script>
+    <!-- CHART JS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <!-- POPPER JS -->
+    <!-- DEV -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js"></script>
+    
+    <!-- PRODUCTION -->
+    <!-- <script src="https://unpkg.com/@popperjs/core@2"></script> -->
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <!-- BOOTSTRAP -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <!-- MOMENT JS -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
       text="text/javascript"
     ></script>
+    <!-- LOCAL SCRIPTS -->
     <script src="data-extractor.js" type="text/javascript"></script>
     <script src="functioning.js" type="text/javascript"></script>
     <script src="chart.js" type="text/javascript"></script>
+    <!-- SERVICE WORKER -->
     <script>
       // ServiceWorker Registration
       if ("serviceWorker" in navigator) {
