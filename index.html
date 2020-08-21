@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156590664-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-156590664-1');
+</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#192B3D" />
@@ -133,6 +142,12 @@
               <h2 class="card-title text-center tested"></h2><h4 class="text-muted tested-today"></h4>
             </div>
           </div>
+          <div class="card text-white  mb-3 col-lg-3 col-md-6 col-sm-6 col-xs-12" style="background-color:rgb(87, 156, 90); max-width: 15rem; margin:0px 10px;" data-aos="fade-up" data-aos-duration="1000">
+            <div class="card-header text-center">Recovery rate</div>
+            <div class="card-body">
+              <h2 class="card-title text-center recovery-rate"></h2>
+            </div>
+        </div>
           <div class="card text-white bg-warning mb-3 col-lg-3 col-md-6 col-sm-6 col-xs-12" style="max-width: 15rem; margin:0px 10px;" data-aos="fade-up" data-aos-duration="1000">
             <div class="card-header text-center">Mortality rate</div>
             <div class="card-body">
@@ -247,6 +262,41 @@
         </div>
       </div>
 
+      <div class="info-boxes-container">
+      <h4 class="text-muted mb-5 text-center" data-aos="fade-up" data-aos-duration="1000">Highest Numbers</h4>
+      <div class="row info-boxes">
+
+        <div
+            class="card text-white bg-primary mb-3 col-lg-3 col-md-6 col-sm-6 col-xs-12"
+            style="max-width: 15rem; margin:0px 10px;box-shadow:0px 0px 10px black;"
+            data-aos="fade-up" data-aos-duration="1000"
+          >
+            <div class="card-header text-center">Highest Confirmed Cases</div>
+            <div class="card-body">
+              <h2 class="card-title text-center highest-confirmed"></h2><h4 class="highest-confirmed-today text-muted"></h4>
+            </div>
+          </div><div
+          class="card text-white bg-primary mb-3 col-lg-3 col-md-6 col-sm-6 col-xs-12"
+          style="max-width: 15rem; margin:0px 10px;box-shadow:0px 0px 10px black;"
+          data-aos="fade-up" data-aos-duration="1000"
+        >
+          <div class="card-header text-center">Highest Recovery Rate</div>
+          <div class="card-body">
+            <h2 class="card-title text-center highest-recovery"></h2>
+          </div>
+        </div><div
+        class="card text-white bg-primary mb-3 col-lg-3 col-md-6 col-sm-6 col-xs-12"
+        style="max-width: 15rem; margin:0px 10px;box-shadow:0px 0px 10px black; "
+        data-aos="fade-up" data-aos-duration="1000"
+      >
+        <div class="card-header text-center">Highest Mortality Rate</div>
+        <div class="card-body">
+          <h2 class="card-title text-center highest-mortality"></h2>
+        </div>
+      </div>
+      </div>
+    </div>
+
       <div class="charts-container">
         <h4 class="text-muted mb-3 text-center" data-aos="fade-up" data-aos-duration="1000">Spread Trends</h4>
         <p class="text-muted text-center" data-aos="fade-up" data-aos-duration="1000">( Click on a box to toggle it )</p>
@@ -266,13 +316,13 @@
             </li> 
         <div class="btn-group btn-group-toggle chart-control-btns" data-toggle="buttons" data-aos="fade-up" data-aos-duration="1000">
           
-          <label class="btn btn-primary">
-            <input type="radio" name="options" id="option1" autocomplete="off" checked="" disabled>Beginning
+          <label class="btn btn-primary active">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked="">Beginning
           </label>
           <label class="btn btn-primary">
             <input type="radio" name="options" id="option2" autocomplete="off">3 months
           </label>
-          <label class="btn btn-primary active">
+          <label class="btn btn-primary">
             <input type="radio" name="options" id="option3" autocomplete="off">1 month
           </label>
         </div>

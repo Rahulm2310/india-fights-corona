@@ -85,6 +85,14 @@ html::-webkit-scrollbar-thumb {
   animation: 1s fadeIn ease-in-out;
 }
 
+.data-numbers .card {
+  border-radius: 20px;
+}
+
+.card .text-muted {
+  color: #ccc !important;
+}
+
 .data .card .card-body {
   display: flex;
   flex-direction: column;
@@ -103,8 +111,8 @@ html::-webkit-scrollbar-thumb {
 .statewise-data,
 .datewise-data {
   width: 95%;
-  margin: 50px auto;
-  margin-bottom: 100px;
+  margin: 100px auto;
+  /* margin-bottom: 100px; */
 }
 
 .statewise-data {
@@ -163,6 +171,19 @@ html::-webkit-scrollbar-thumb {
   font-size: 10px;
 }
 
+.info-boxes-container {
+  margin: 150px auto;
+}
+
+.info-boxes {
+  display: flex;
+  justify-content: center;
+}
+
+.info-boxes .card {
+  border-radius: 20px;
+}
+
 @media screen and (max-width: 550px) {
   .home-container {
     width: 95% !important;
@@ -199,6 +220,10 @@ html::-webkit-scrollbar-thumb {
   }
 }
 
+.charts-container {
+  margin: 150px auto;
+}
+
 .btn-container {
   display: flex;
   align-items: center;
@@ -211,6 +236,12 @@ html::-webkit-scrollbar-thumb {
   display: flex;
   justify-content: center;
   /* margin: 0 auto; */
+}
+
+.chart-control-btns label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-container .dropdown {
@@ -237,6 +268,13 @@ footer {
 
 .news-item {
   opacity: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  /* box-shadow: 0px 0px 10px darkgray; */
+}
+
+.news-item .row {
+  height: 100%;
 }
 
 .news-content h4 {
@@ -258,7 +296,17 @@ footer {
 
 .news-image {
   display: flex;
-  align-items: center;
+  padding: 0px;
+  /* align-items: center; */
+}
+
+/* .news-content  */
+
+.news-image img {
+  border: none !important;
+  padding: 0px !important;
+  background: none !important;
+  border-radius: 0px;
 }
 
 .news-metadata {

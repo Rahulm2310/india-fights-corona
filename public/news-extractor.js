@@ -1,9 +1,45 @@
-$(document).ready(function () {
+let NEWS = {
+  general: [],
+  health: [],
+  business: [],
+  technology: [],
+  science: [],
+  sports: [],
+  entertainment: [],
+};
+// let general = [];
+// let health = [];
+// let business = [];
+// let technology = [];
+// let science = [];
+// let sports = [];
+// let entertainment = [];
+
+// $(document).ready(function () {
+// });
+
+// $('')
+
+$(window).scroll(function () {
+  /* Check the location of each desired element */
+  $(".news-item").each(function (i) {
+    var bottom_of_object = $(this).position().top + $(this).outerHeight();
+    var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+    /* If the object is completely visible in the window, fade it it */
+    if (bottom_of_window > bottom_of_object - 500) {
+      $(this).animate({ opacity: "1" }, 800);
+    }
+  });
+});
+
+function fetchCategoryNewsAndUpdateUi(category) {
   fetch(
-    "https://newsapi.org/v2/top-headlines?country=in&apiKey=301f8a69a50b4f8c8bfbd6a2bfd6687c"
+    `https://newsapi.org/v2/top-headlines?country=in&sources=${category}&apiKey=301f8a69a50b4f8c8bfbd6a2bfd6687c`
   )
     .then((res) => res.json())
     .then((data) => {
+      console.log(data);
       let newsData = data.articles;
       let newsItems = newsData.map((item) => {
         let timeFromNow = moment(
@@ -11,11 +47,11 @@ $(document).ready(function () {
           "YYYY-MM-DD HH:mm:ss"
         ).fromNow();
         let updatedContent = item.content
-          ? item.content.substring(0, 250) + "..."
+          ? item.content.substring(0, 200) + "..."
           : "";
         return `
         <div
-          class="news-item bg-light flex-column align-items-start mb-4 p-4"
+          class="news-item bg-light flex-column align-items-start mb-5"
         >
           <div class="row">
             <div class="news-image col-lg-4 col-md-4 col-xs-12 ">
@@ -28,7 +64,7 @@ $(document).ready(function () {
                 }"
               />
             </div>
-            <div class="news-content col-lg-8 col-md-8 col-xs-12">
+            <div class="news-content col-lg-8 col-md-8 col-xs-12 p-4">
               <div class="d-flex w-100 justify-content-between">
                 <h4 class="mt-3 text-left">${item.title}</h4>
               </div>
@@ -51,19 +87,6 @@ $(document).ready(function () {
       });
 
       newsItems = newsItems.join("");
-      $(".news-list").html(newsItems);
-
-      $(window).scroll(function () {
-        /* Check the location of each desired element */
-        $(".news-item").each(function (i) {
-          var bottom_of_object = $(this).position().top + $(this).outerHeight();
-          var bottom_of_window = $(window).scrollTop() + $(window).height();
-
-          /* If the object is completely visible in the window, fade it it */
-          if (bottom_of_window > bottom_of_object - 500) {
-            $(this).animate({ opacity: "1" }, 800);
-          }
-        });
-      });
+      $(`#${category}`).html(newsItems);
     });
-});
+}

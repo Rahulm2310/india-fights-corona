@@ -6,6 +6,7 @@ let confirmedToday = 0;
 let recoveredToday = 0;
 let deathsToday = 0;
 let mortalityRate = 0;
+let recoveryRate = 0;
 let tested = 0;
 let testedToday = 0;
 let updatedTime = "";
@@ -13,6 +14,11 @@ let stateWiseData = [];
 let districtWiseData = [];
 let dateWiseData = [];
 let indiaTimeSeriesArray = [];
+var myChart = null;
+let highestConfirmed = 0;
+let highestConfirmedToday = 0;
+let highestRecovery = 0;
+let highestMortality = 0;
 
 $(document).ready(function () {
   fetch("https://api.covid19india.org/data.json")
@@ -27,6 +33,7 @@ $(document).ready(function () {
       deathsToday = data.statewise[0].deltadeaths;
       updatedTime = data.statewise[0].lastupdatedtime;
       mortalityRate = ((deaths / confirmed) * 100).toFixed(2);
+      recoveryRate = ((recovered / confirmed) * 100).toFixed(2);
       tested = data.tested[data.tested.length - 1].totalsamplestested;
       testedToday = data.tested[data.tested.length - 1].samplereportedtoday;
 
@@ -37,12 +44,13 @@ $(document).ready(function () {
       $(".card-body .recovered").text(recovered);
       $(".card-body .deaths").text(deaths);
       $(".card-body .mortality-rate").text(`${mortalityRate} %`);
+      $(".card-body .recovery-rate").text(`${recoveryRate} %`);
       $(".card-body .tested").text(tested);
       $(".card-body .tested-today").text(`(+${testedToday})`);
       $(".card-body .confirmed-today").text(`(+${confirmedToday})`);
       $(".card-body .recovered-today").text(`(+${recoveredToday})`);
       $(".card-body .deaths-today").text(`(+${deathsToday})`);
-      $(".updated-time").text(`Last updated : ${timeFromNow}`);
+      $(".updated-time").text(`Last updated ${timeFromNow}`);
 
       stateWiseData = data.statewise;
 
@@ -54,6 +62,22 @@ $(document).ready(function () {
         .reverse();
 
       stateWiseData.sort((a, b) => b.confirmed - a.confirmed);
+
+      highestConfirmed = stateWiseData[0].confirmed;
+      highestConfirmedToday = stateWiseData[0].deltaconfirmed;
+      stateWiseData.forEach((item) => {
+        if ((item.recovered / item.confirmed) * 100 > highestRecovery) {
+          highestRecovery = (item.recovered / item.confirmed) * 100;
+        }
+        if ((item.deaths / item.confirmed) * 100 > highestMortality) {
+          highestMortality = (item.deaths / item.confirmed) * 100;
+        }
+      });
+
+      $(".highest-confirmed").text(highestConfirmed);
+      $(".highest-confirmed-today").text(`(+${highestConfirmedToday})`);
+      $(".highest-recovery").text(`${highestRecovery.toFixed(2)} %`);
+      $(".highest-mortality").text(`${highestMortality.toFixed(2)} %`);
 
       stateTableRows = stateWiseData.map(
         (
@@ -72,8 +96,8 @@ $(document).ready(function () {
       // ========================= CHARTS =====================================
 
       indiaTimeSeriesArray = data.cases_time_series;
-      console.log(indiaTimeSeriesArray);
-      createChart(indiaTimeSeriesArray);
+      // console.log(indiaTimeSeriesArray);
+      createChart(indiaTimeSeriesArray.filter((item, index) => index % 7 == 0));
 
       // ==================== DATE WISE TABLE ==========================
       dateTableRows = dateWiseData.map(
@@ -93,22 +117,27 @@ $(document).ready(function () {
 
   $(".chart-control-btns .btn").on("click", function () {
     const chartType = document.querySelector("select.dropdown-container").value;
-    console.log("chart type:", chartType);
-    console.log("pressed");
+    // console.log("chart type:", chartType);
+    // console.log("pressed");
     const time = $(this).text().trim();
-    console.log(time);
+    // console.log(time);
     if (time == "Beginning") {
-      createChart(indiaTimeSeriesArray, chartType);
-      console.log(indiaTimeSeriesArray);
+      console.log(indiaTimeSeriesArray.filter((item, index) => index % 7 == 0));
+      createChart(
+        indiaTimeSeriesArray.filter((item, index) => index % 7 == 0),
+        chartType
+      );
     } else if (time == "3 months") {
       console.log(
         indiaTimeSeriesArray.filter(
-          (item, index) => index > indiaTimeSeriesArray.length - 91
+          (item, index) =>
+            index > indiaTimeSeriesArray.length - 90 && index % 3 == 0
         )
       );
       createChart(
         indiaTimeSeriesArray.filter(
-          (item, index) => index > indiaTimeSeriesArray.length - 91
+          (item, index) =>
+            index > indiaTimeSeriesArray.length - 90 && index % 3 == 0
         ),
         chartType
       );
@@ -215,24 +244,27 @@ $(document).ready(function () {
 });
 
 function selectChart(value) {
-  console.log(value);
+  // console.log(value);
   // console.log(indiaTimeSeriesArray);
   // if (value == "pie") {
   //   $(".chart-control-btns input").attr("disabled", true);
   //   createPieChart();
   // }
-  if (value == "radar") {
-    $(".chart-control-btns input").attr("disabled", true);
-    createChart(
-      indiaTimeSeriesArray.filter(
-        (item, index) => index > indiaTimeSeriesArray.length - 31
-      ),
-      value
-    );
-  } else {
-    $(".chart-control-btns input").attr("disabled", false);
-    createChart(indiaTimeSeriesArray, value);
-  }
+  // if (value == "radar") {
+  //   $(".chart-control-btns input").attr("disabled", true);
+  //   createChart(
+  //     indiaTimeSeriesArray.filter(
+  //       (item, index) => index > indiaTimeSeriesArray.length - 31
+  //     ),
+  //     value
+  //   );
+  // } else {
+  //   $(".chart-control-btns input").attr("disabled", false);
+  createChart(
+    indiaTimeSeriesArray.filter((item, index) => index % 7 == 0),
+    value
+  );
+  // }
 }
 
 function createChart(indiaTimeSeries, chartType = "line") {
@@ -247,8 +279,11 @@ function createChart(indiaTimeSeries, chartType = "line") {
     return item.date;
     // }
   });
+  if (myChart) {
+    myChart.destroy();
+  }
   var ctx = document.getElementById("myChart").getContext("2d");
-  var chart = new Chart(ctx, {
+  myChart = new Chart(ctx, {
     // The type of chart we want to create
     type: chartType == "area" ? "line" : chartType,
 
@@ -290,7 +325,7 @@ function createChart(indiaTimeSeries, chartType = "line") {
     // Configuration options go here
     options: {
       responsive: true,
-      maintainAspectRatio: true,
+      maintainAspectRatio: false,
       responsiveAnimationDuration: 1000,
       color: "#fff",
     },

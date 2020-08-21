@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156590664-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-156590664-1');
+</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>India fights Corona</title>
@@ -64,7 +73,57 @@
       </div>
     </nav>
     <main id="container">
-      <div class="news-list"></div>
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#general">General</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#health">Health</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#business">Business</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#technology">Technology</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#science">Science</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#sports">Sports</a>
+        </li><li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#entertainment">Entertainment</a>
+        </li>
+      </ul>
+      <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade active show" id="general">
+          <!-- <p>general</p> -->
+        </div>
+        <div class="tab-pane fade" id="health">
+          <!-- <p>health</p> -->
+        </div>
+        <div class="tab-pane fade" id="business">
+          <!-- <p>business</p> -->
+        </div>
+        <div class="tab-pane fade" id="technology">
+          <!-- <p>technology</p> -->
+        </div>
+        <div class="tab-pane fade" id="science">
+          <!-- <p>science</p> -->
+        </div>
+        <div class="tab-pane fade" id="sports">
+          <!-- <p>sports</p> -->
+        </div>
+        <div class="tab-pane fade" id="entertainment">
+          <!-- <p>entertainment</p> -->
+        </div>
+      </div>
+      <div class="news-list">
+        <h4 class="text-muted text-center">Fetching latest news</h4>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+        </div>
+      </div>
     </main>
     <footer>
       <p class="text-muted text-center"></p>
