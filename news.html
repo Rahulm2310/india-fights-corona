@@ -72,56 +72,89 @@
         </ul>
       </div>
     </nav>
-    <main id="container">
+    <main id="container" style="margin-top:75px;">
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#general">General</a>
+          <a class="nav-link active" data-toggle="tab" href="#general" onclick="fetchCategoryNews('general')">General</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#health">Health</a>
+          <a class="nav-link" data-toggle="tab" href="#health" onclick="fetchCategoryNews('health')">Health</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#business">Business</a>
+          <a class="nav-link" data-toggle="tab" href="#business" onclick="fetchCategoryNews('business')">Business</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#technology">Technology</a>
+          <a class="nav-link" data-toggle="tab" href="#technology" onclick="fetchCategoryNews('technology')">Technology</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#science">Science</a>
+          <a class="nav-link" data-toggle="tab" href="#science" onclick="fetchCategoryNews('science')">Science</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#sports">Sports</a>
+          <a class="nav-link" data-toggle="tab" href="#sports" onclick="fetchCategoryNews('sports')">Sports</a>
         </li><li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#entertainment">Entertainment</a>
+          <a class="nav-link" data-toggle="tab" href="#entertainment" onclick="fetchCategoryNews('entertainment')">Entertainment</a>
         </li>
       </ul>
       <div id="myTabContent" class="tab-content">
-        <div class="tab-pane fade active show" id="general">
+        <div class="news-list mt-3 tab-pane fade active show" id="general">
           <!-- <p>general</p> -->
+            <h4 class="text-muted text-center mt-5">Fetching latest news for you</h4>
+            <div class="progress mt-4">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+            </div>
         </div>
-        <div class="tab-pane fade" id="health">
+        <div class="news-list mt-3 tab-pane fade" id="health">
           <!-- <p>health</p> -->
+          
+            <h4 class="text-muted text-center mt-5">Fetching latest health news for you</h4>
+            <div class="progress mt-4">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+            </div>
+        
         </div>
-        <div class="tab-pane fade" id="business">
+        <div class="news-list mt-3 tab-pane fade" id="business">
           <!-- <p>business</p> -->
+         
+            <h4 class="text-muted text-center mt-5">Fetching latest business news for you</h4>
+            <div class="progress mt-4">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+            </div>
+          
         </div>
-        <div class="tab-pane fade" id="technology">
+        <div class="news-list mt-3 tab-pane fade" id="technology">
           <!-- <p>technology</p> -->
+         
+            <h4 class="text-muted text-center mt-5">Fetching latest technology news for you</h4>
+            <div class="progress mt-4">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+            </div>
+         
         </div>
-        <div class="tab-pane fade" id="science">
+        <div class="news-list mt-3 tab-pane fade" id="science">
           <!-- <p>science</p> -->
+        
+            <h4 class="text-muted text-center mt-5">Fetching latest science news for you</h4>
+            <div class="progress mt-4">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+            </div>
+          
         </div>
-        <div class="tab-pane fade" id="sports">
+        <div class="news-list mt-3 tab-pane fade" id="sports">
           <!-- <p>sports</p> -->
+         
+            <h4 class="text-muted text-center mt-5">Fetching latest sports news for you</h4>
+            <div class="progress mt-4">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+            </div>
+        
         </div>
-        <div class="tab-pane fade" id="entertainment">
+        <div class="news-list mt-3 tab-pane fade" id="entertainment">
           <!-- <p>entertainment</p> -->
-        </div>
-      </div>
-      <div class="news-list">
-        <h4 class="text-muted text-center">Fetching latest news</h4>
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+        
+            <h4 class="text-muted text-center mt-5">Fetching latest entertainment news for you</h4>
+            <div class="progress mt-4">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+            </div>
         </div>
       </div>
     </main>
