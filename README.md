@@ -45,3 +45,6 @@ To get the frontend running locally:
 - Run `yarn` or `npm i` to install all required dependencies
 - Run `yarn start` or `npm run start` to start the local server
 - Go to http://localhost:3000 on your browser
+
+## LICENSE
+The project is licensed under the GNU General Public License v3.0. Learn more about it in the [LICENSE](LICENSE) file.
